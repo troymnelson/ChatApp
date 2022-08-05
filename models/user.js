@@ -5,6 +5,7 @@ const sequelize = require('../config/db-connection');
 
 class User extends Model { }
 
+const Post = require('./Post');
 
 User.init(
   {
@@ -32,6 +33,7 @@ User.init(
   }
 );
 
-
+User.hasMany(Post);
+Post.belongsTo(User);
 
 module.exports = User;

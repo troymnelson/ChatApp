@@ -8,7 +8,7 @@ class Post extends Model { }
 Post.init(
     {
         id: {
-            Type: DataTypes.NUMBER,
+            Type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
