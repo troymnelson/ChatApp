@@ -10,7 +10,7 @@ User.init(
   {
   id: {
     Type: DataTypes.NUMBER,
-    allowNullq: false,
+    allowNull: false,
     primaryKey: true,
     autoIncrement: true
   },
