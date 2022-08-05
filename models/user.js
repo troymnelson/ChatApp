@@ -5,11 +5,8 @@ const sequelize = require('../config/db-connection');
 
 class User extends Model { }
 
-<<<<<<< HEAD
 const Post = require('./Post');
 
-=======
->>>>>>> 44d3f6e6cffa5988dbe81b43000fa600e89da6f3
 User.init(
   {
     id: {
