@@ -1,7 +1,14 @@
-// console.log('hello app!');
+
+
 
 // const loginBtn = document.querySelector('#login');
 // const registerBtn = document.querySelector('#register');
+
+// loginBtn.addEventListener('click', () => {
+//     fetch('/login')
+//         .then(res => console.log(res))
+// });
+
 
 // const getLogin = () => {
 //     fetch('/login', {
