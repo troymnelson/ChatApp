@@ -5,8 +5,6 @@ const sequelize = require('../config/db-connection');
 
 class User extends Model { }
 
-const Post = require('./Post');
-
 User.init(
   {
     id: {
