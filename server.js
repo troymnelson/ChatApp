@@ -8,6 +8,9 @@ const app = express(); // new express app
 
 const { view_routes } = require('./controllers'); // require path to view routes
 
+// load view_routes on root route
+app.use('/', view_routes)
+
 app.use(express.static(path.join(__dirname, '/public'))); // allows frontend files to be shared with browser/client
 // set up the hbs engine stuff
 app.engine('hbs', engine({ extname: '.hbs' }));
@@ -17,10 +20,10 @@ app.set('view engine', 'hbs');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// load view_routes on root route
-app.use('/', view_routes)
+
 
 // set up server
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
 })
+
