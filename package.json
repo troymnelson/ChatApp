@@ -1,7 +1,7 @@
 {
   "name": "chatapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "A social media and coding forum app to share life updates or get coding help. This app is perfect for classmates to come together \r and share about themselves or get help on homework.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
