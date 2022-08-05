@@ -9,13 +9,17 @@ Post.init(
     {
         id: {
             Type: DataTypes.NUMBER,
-            allowNullq: false,
+            allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
-        description: {
+        title: {
             Type: DataTypes.STRING,
-            allowNullq: false
+            allowNull: false
+        },
+        message: {
+            Type: DataTypes.STRING,
+            allowNull: false
         }
     },
     {
