@@ -5,7 +5,6 @@ const sequelize = require('../config/db-connection');
 
 class User extends Model { }
 
-
 User.init(
   {
     id: {
