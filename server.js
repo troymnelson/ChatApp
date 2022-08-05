@@ -1,14 +1,14 @@
 const express = require('express');
 const path = require('path');
 const { engine } = require('express-handlebars'); // get the engine function from hbs package
-const PORT = process.env.PORT || process.env.API_PORT; // set up port
-require('dotenv').config(); // attack .env process to obj
+const PORT = process.env.PORT || 3333; // set up port
+require('dotenv').config(); // attach .env process to obj
 
 const app = express(); // new express app
 
 const { view_routes } = require('./controllers'); // require path to view routes
 
-app.use(express.static(path.join(__dirname, 'public'))); // allows frontend files to be shared with browser/client
+app.use(express.static(path.join(__dirname, '/public'))); // allows frontend files to be shared with browser/client
 // set up the hbs engine stuff
 app.engine('hbs', engine({ extname: '.hbs' })); 
 app.set('view engine', 'hbs');
