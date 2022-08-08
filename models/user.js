@@ -3,6 +3,8 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/db-connection');
 
+const Post = require('./Post')
+
 class User extends Model { }
 
 User.init(
@@ -20,6 +22,10 @@ User.init(
     email: {
       Type: DataTypes.STRING,
       allowNull: false
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
     }
   },
   {

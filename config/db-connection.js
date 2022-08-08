@@ -1,7 +1,7 @@
-const {Sequelize} = require('sequelize');
+const { Sequelize } = require('sequelize');
 
 const connection = new Sequelize(
-    'chat-app-db',
+    'chat_app_db',
     'root',
     'pass',
     {
