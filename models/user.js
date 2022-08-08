@@ -9,18 +9,12 @@ class User extends Model { }
 
 User.init(
   {
-    id: {
-      Type: DataTypes.NUMBER,
-      allowNullq: false,
-      primaryKey: true,
-      autoIncrement: true
-    },
     users_name: {
-      Type: DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
     email: {
-      Type: DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
     password: {
@@ -31,7 +25,6 @@ User.init(
   {
     sequelize,
     timestamps: false,
-    freezeTableName: true,
     underscored: true,
     modelName: 'user',
   }
