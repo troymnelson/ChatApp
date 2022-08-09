@@ -13,7 +13,15 @@ header{
 }
 
 body{
-    background-color: rgb(62, 56, 103);
+    background-color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+}
+html{
+    height: 100%;
 }
 
 button{
@@ -26,7 +34,35 @@ button{
 }
 
 h1{
-    justify-content: center;
-    align-items: center;
+
     background-color: rgb(102, 102, 204);
+}
+
+.login{
+background-color: rgb(102, 102, 204);
+}
+
+section{
+    margin: auto;
+    display: flex;
+}
+
+.btn{
+    margin: 7px;
+}
+
+#welcome{
+    padding: 10px;
+    margin: 7px;
+    border-radius: 3px;
+}
+
+#nav{
+    top: 0px;
+    width: 100%;
+    display: block;
+}
+
+#container{
+    display: flex;
 }
