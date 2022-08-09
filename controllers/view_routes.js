@@ -32,10 +32,16 @@ router.get('/login', (req, res) => {
     res.render('login', { title: 'login', isHome: false });
 });
 
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', async (req, res) => {
 
-        const thing = req.session.id;
-        res.render('dashboard', { thing: thing, title: 'Dashboard', isHome: false, friday: result });
+        console.log(req.session);
+        let post = await Post.findByPk(req.session.post_id);
+        post = {
+            id: post.id,
+            title: post.title,
+            message: post.message,
+        }
+        res.render('dashboard', { post: post, title: 'Dashboard', isHome: false, friday: result });
 
     
 
