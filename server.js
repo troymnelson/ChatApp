@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const { engine } = require('express-handlebars'); // get the engine function from hbs package
-const PORT = process.env.PORT || process.env.API_PORT; // set up port
+const PORT = process.env.PORT || 3333; // set up port
 require('dotenv').config(); // attack .env process to obj
 
 const app = express(); // new express app
