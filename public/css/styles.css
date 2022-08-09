@@ -67,3 +67,9 @@ section{
 #container{
     display: flex;
 }
+
+#logoutBtn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
