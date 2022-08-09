@@ -7,12 +7,16 @@ const router = require('express').Router(); // REQUIRE DA ROUTER
 router.get('/', (req, res) => { // RENDER INDEX.HTML ON ROOT ROUTE
     if (req.session.user_id){
        
-        return User.findByPk(req.session.user_id).then((user) => {
-            console.log(user)
-            res.render('index', {userdata: user})
-        })
+        return User.findByPk(req.session.user_id).then(user => {
+            user = {
+                 id: user.id,
+                 users_name: user.users_name,
+                 email: user.email,
+                 createdAt: user.createdAt
+            }
+            res.render('index', { user, isHome: true})
+        });
     }
-    console.log(req.session.user_id)
     res.render('index', {title: 'Chat app', isHome: true})
 });
 
