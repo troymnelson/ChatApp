@@ -35,10 +35,7 @@ router.get('/login', (req, res) => {
 router.get('/dashboard', (req, res) => {
 
         const thing = req.session.id;
-        res.render('dashboard', { thing: thing, title: 'Dashboard', isHome: false });
-
-        
-        res.render('dashboard', { title: 'Dashboard', isHome: false, friday: result });
+        res.render('dashboard', { thing: thing, title: 'Dashboard', isHome: false, friday: result });
 
     
 
