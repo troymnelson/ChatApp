@@ -2,6 +2,10 @@ import './style.css';
 
 import * as THREE from 'three';
 
+// const renderer = new THREE.WebGLRenderer({
+//   canvas: document.querySelector('#bg'),
+
+// });
 
 var scene, camera, renderer;
 
