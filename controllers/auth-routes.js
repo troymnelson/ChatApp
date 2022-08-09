@@ -1,4 +1,6 @@
 const auth_router = require('express').Router()
+const { Router } = require('express')
+const Post = require('../models/Post')
 const User = require('../models/user')
 
 auth_router.post('/registration', (req, res) => {
@@ -48,6 +50,7 @@ auth_router.post('/logged', (req, res) => {
 
 })
 
+
 auth_router.get('/logout', (req, res) => {
 
     if (!req.session.user_id) return res.redirect('/');
@@ -57,5 +60,6 @@ auth_router.get('/logout', (req, res) => {
         res.redirect('/');
     });
 })
+
 
 module.exports = auth_router
