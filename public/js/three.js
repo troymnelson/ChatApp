@@ -66,11 +66,8 @@ function animate() {
         va[2 * line_index] += 0.03; //bump up the velocity by the acceleratioin amount
         va[2 * line_index + 1] += 0.025;
 
-        // pa[6 * line_index]++;                            //x start
-        // pa[6 * line_index + 1]++;                        //y
-        pa[6 * line_index + 2] += va[2 * line_index];       //z
-        // pa[6 * line_index + 3]++;                        //x End
-        // pa[6 * line_index + 4]++;                        //z
+        pa[6 * line_index + 2] += va[2 * line_index];
+
         pa[6 * line_index + 5] += va[2 * line_index + 1];
 
         if (pa[6 * line_index + 5] > 200) {
