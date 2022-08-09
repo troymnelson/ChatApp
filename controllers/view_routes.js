@@ -5,25 +5,35 @@ const router = require('express').Router(); // REQUIRE DA ROUTER
 // const User = require('../models/User');
 
 router.get('/', (req, res) => { // RENDER INDEX.HTML ON ROOT ROUTE
-    if (req.session.user_id){
-       
+    if (req.session.user_id) {
+
         return User.findByPk(req.session.user_id).then((user) => {
+            user = {
+                id: user.id,
+                users_name: user.users_name,
+                email: user.email,
+                password: user.password,
+                createdAt: user.createdAt
+            }
             console.log(user)
-            res.render('index', {userdata: user})
+            res.render('index', { user })
         })
     }
     console.log(req.session.user_id)
-    res.render('index', {title: 'Chat app', isHome: true})
+    res.render('index', { title: 'Chat app', isHome: true })
 });
 
 router.get('/register', (req, res) => {
-    res.render('register', {title: 'register', isHome: false});
+    res.render('register', { title: 'register', isHome: false });
 });
 
 router.get('/login', (req, res) => {
-    res.render('login', {title: 'login', isHome: false});
+    res.render('login', { title: 'login', isHome: false });
 });
 
+router.get('/dashboard', (req, res) => {
+    res.render('dashboard', { title: 'Dashboard', isHome: false });
+});
 
 
 
