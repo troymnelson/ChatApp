@@ -39,7 +39,7 @@ h1{
 }
 
 .login{
-background-color: rgb(102, 102, 204);
+    background-color: rgb(102, 102, 204);
 }
 
 section{
@@ -58,6 +58,7 @@ section{
 }
 
 #nav{
+    position: absolute;
     top: 0px;
     width: 100%;
     display: block;
