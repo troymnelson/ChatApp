@@ -1,4 +1,5 @@
-import './public/css/style-three.css';
+// import '/css/three.css';
+
 
 import * as THREE from 'three';
 
