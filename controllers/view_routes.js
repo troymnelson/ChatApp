@@ -32,12 +32,10 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/dashboard', (req, res) => {
-    db.query(`SELECT title, content FROM post`, function(err, data) {
-        if (err) throw err;
-
+        
         res.render('dashboard', { title: 'Dashboard', isHome: false });
     
-    })
+
 });
 
 

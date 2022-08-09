@@ -50,4 +50,6 @@ auth_router.post('/logged', (req, res) => {
 
 })
 
+
+
 module.exports = auth_router
