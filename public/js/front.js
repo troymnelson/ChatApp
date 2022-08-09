@@ -1,27 +1,38 @@
 
 
+const submitBtn = document.querySelector('.submit');
 
-// const loginBtn = document.querySelector('#login');
-// const registerBtn = document.querySelector('#register');
-
-// loginBtn.addEventListener('click', () => {
-//     fetch('/login')
-//         .then(res => console.log(res))
-// });
+const outputPosts = (data) => {
+    console.log(data);
+}
 
 
-// const getLogin = () => {
-//     fetch('/login', {
-//         method: "get",
-//         headers: {
-//             'Accept': 'application/json',
-//             'Content-Type': 'application/json'
-//         }
-//     })
-//         .then(response => response.json())
-//         .then(data => console.log(data))
-// }
+const addPost = async (event) => {
+    const title = document.querySelector('input[name="title"]').value;
+    const message = document.querySelector('input[name="message"]').value;
 
-// getLogin();
+    event.preventDefault();
+    const data = {
+        message: message,
+        title: title
+    }
+    console.log(data);
+    
+    const response = await fetch('/post', {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    });
+    console.log(response);
+    if (response.ok) {
+        document.location.replace('/dashboard');
+    } else if (err){
+        console.log(err);
+    } 
+    
+};
 
-// loginBtn.addEventListener('click', getLogin);
+
+submitBtn.addEventListener('click', addPost);

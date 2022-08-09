@@ -5,12 +5,11 @@ const { engine } = require('express-handlebars'); // get the engine function fro
 require('dotenv').config(); // attach .env process to obj
 const PORT = process.env.PORT || 3333; // set up port
 
-
 const app = express(); // new express app
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-const { view_routes, auth_routes } = require('./controllers'); // require path to view routes
+const { view_routes, auth_routes, post_routes } = require('./controllers'); // require path to view routes
 // load view_routes on root route
 
 // set up the hbs engine stuff
@@ -44,6 +43,7 @@ app.use(session({
 
 app.use('/', view_routes)
 app.use('/auth', auth_routes)
+app.use('/post', post_routes)
 
 connection.sync({ force: false }).then(() => {
     app.listen(PORT, () => {
