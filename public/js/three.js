@@ -1,9 +1,9 @@
-import './style.css';
+import './public/css/style-three.css';
 
 import * as THREE from 'three';
 
 // const renderer = new THREE.WebGLRenderer({
-//   canvas: document.querySelector('#bg'),
+//     canvas: document.querySelector('#bg'),
 
 // });
 
