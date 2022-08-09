@@ -59,14 +59,25 @@ section{
 
 #nav{
     position: absolute;
-    top: 0px;
-    width: 100%;
+    top: 50%;
+    left: 50%;
     display: block;
+    opacity: 0%;
 }
 
 #container{
     display: flex;
 }
+
+main {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 
 #logoutBtn {
     position: absolute;

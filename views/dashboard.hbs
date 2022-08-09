@@ -1,15 +1,18 @@
-<h1>POSTS</h1>
-<div class="card container" style="width: 18rem; height: 10rem">
-  <div class="card-body">
-    <h5 class="card-title">{{data.title}}</h5>
-    <p class="card-text">{{data.message}}</p>
+<main>
+
+  <h1>POSTS</h1>
+  <div class="card container" style="width: 18rem; height: 10rem">
+    <div class="card-body">
+      <h5 class="card-title">{{data.title}}</h5>
+      <p class="card-text">{{data.message}}</p>
+    </div>
   </div>
-</div>
-<section>
-  <form class="d-flex flex-column formEl" action="">
-      <input type="text" name="title" placeholder="Title">
-      <input type="text" name="message" placeholder="Message">
-      <button class="submit">Post!</button>
-  </form>
-</section>
-<a href="/auth/logout"><button type="button" id="logout logoutBtn" class="btn btn-info">Logout</button></a>
+  <section>
+    <form class="d-flex flex-column formEl" action="">
+        <input type="text" name="title" placeholder="Title">
+        <input type="text" name="message" placeholder="Message">
+        <button class="submit">Post!</button>
+    </form>
+  </section>
+  <a href="/auth/logout"><button type="button" id="logout logoutBtn" class="btn btn-info">Logout</button></a>
+</main>
