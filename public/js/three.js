@@ -1,4 +1,5 @@
-import './public/css/style-three.css';
+// import '/css/three.css';
+
 
 import * as THREE from 'three';
 
@@ -46,7 +47,7 @@ function init() {
         va[2 * line_index] = va[2 * line_index + 1] = 0;
     }
     // debugger
-    let mat = new THREE.LineBasicMaterial({ color: 0xFFFFFF }); // red 0xff0000
+    let mat = new THREE.LineBasicMaterial({ color: 0xFFFFFF }); // red 0xff0000, white 0xFFFFFF
     let lines = new THREE.LineSegments(geom, mat);
     scene.add(lines);
 
