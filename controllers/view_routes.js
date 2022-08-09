@@ -1,5 +1,5 @@
 const User = require('../models/user');
-
+const db = require('../config/db-connection');
 const router = require('express').Router(); // REQUIRE DA ROUTER
 
 // const User = require('../models/User');
@@ -32,7 +32,12 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/dashboard', (req, res) => {
-    res.render('dashboard', { title: 'Dashboard', isHome: false });
+    db.query(`SELECT title, content FROM post`, function(err, data) {
+        if (err) throw err;
+
+        res.render('dashboard', { title: 'Dashboard', isHome: false });
+    
+    })
 });
 
 
