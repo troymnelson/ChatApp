@@ -2,6 +2,7 @@
 const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/db-connection');
+const bcrypt = require('bcrypt')
 
 const Post = require('./Post')
 
@@ -27,8 +28,18 @@ User.init(
     timestamps: false,
     underscored: true,
     modelName: 'user',
-  }
-);
+
+    hooks: {
+      async beforeCreate(user) {
+        const hashed_pass = await bcrypt.hash(user.password, 10);
+        user.password = hashed_pass;
+      }
+    }
+  });
+
+User.prototype.validatePassword = async function (password, stored_password) {
+  return await bcrypt.compare(password, stored_password);
+}
 
 User.hasMany(Post);
 Post.belongsTo(User);

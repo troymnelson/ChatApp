@@ -1,17 +1,18 @@
 <section class="card login" style="width: 18rem;">
 
 
-<h1>Log In!</h1>
-<form>
-    <div class="mb-3 login">
-        <label for="exampleInputEmail1" class="form-label">Username</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Enter Username">
-    </div>
-    <div class="mb-3 login">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
-    </div>
-    <button type="submit" class="btn btn-primary">Login!</button>
-</form>
+    <h1>Log In!</h1>
+    <form action="/auth/logged" method="post">
+        <div class="mb-3 login">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter Email">
+        </div>
+        <div class="mb-3 login">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input name="password" type="password" class="form-control" id="exampleInputPassword1"
+                placeholder="Enter Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Login!</button>
+    </form>
 </section>
