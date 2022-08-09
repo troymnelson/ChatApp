@@ -1,9 +1,13 @@
+var formatDistanceToNow = require('date-fns/formatDistanceToNow')
+const result = formatDistanceToNow(
+    new Date(2022, 7, 13),
+    {addSuffix: true})
 const User = require('../models/user');
 const db = require('../config/db-connection');
 const router = require('express').Router(); // REQUIRE DA ROUTER
-
+const Post = require('../models/Post');
 // const User = require('../models/User');
-
+console.log(result)
 router.get('/', (req, res) => { // RENDER INDEX.HTML ON ROOT ROUTE
     if (req.session.user_id){
        
@@ -29,13 +33,13 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/dashboard', (req, res) => {
-        
-        res.render('dashboard', { title: 'Dashboard', isHome: false });
+
+        const thing = req.session.id;
+        res.render('dashboard', { thing: thing, title: 'Dashboard', isHome: false, friday: result });
+
     
 
 });
-
-
 
 
 module.exports = router;

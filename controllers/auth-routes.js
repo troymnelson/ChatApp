@@ -2,7 +2,8 @@ const auth_router = require('express').Router()
 const { Router } = require('express')
 const Post = require('../models/Post')
 const User = require('../models/user')
-
+const { Timer } = require('timer-node');
+const timer = new Timer({ label: 'test-timer' });
 auth_router.post('/registration', (req, res) => {
     User.findOne({
         where: {
@@ -43,6 +44,8 @@ auth_router.post('/logged', (req, res) => {
         }
 
         req.session.save(() => {
+            timer.start();
+            console.log(timer.isStarted());
             req.session.user_id = user.id;
             res.redirect('/dashboard')
         })
@@ -56,8 +59,8 @@ auth_router.get('/logout', (req, res) => {
     if (!req.session.user_id) return res.redirect('/');
 
     req.session.destroy(() => {
-
-        res.redirect('/');
+        const time = timer.time();
+        res.redirect('/', time);
     });
 })
 
