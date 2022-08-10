@@ -1,7 +1,7 @@
 const auth_router = require('express').Router()
 const { Router } = require('express')
 const Post = require('../models/Post')
-const User = require('../models/user')
+const User = require('../models/User')
 const { Timer } = require('timer-node');
 const timer = new Timer({ label: 'test-timer' });
 auth_router.post('/registration', (req, res) => {
