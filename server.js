@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const { engine } = require('express-handlebars'); // get the engine function from hbs package
 require('dotenv').config(); // attach .env process to obj
-const PORT = process.env.PORT || 3333; // set up port
+const PORT = process.env.PORT || 3006; // set up port
 
 const app = express(); // new express app
 const session = require('express-session');
