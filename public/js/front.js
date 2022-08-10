@@ -1,12 +1,7 @@
 
 
 const submitBtn = document.querySelector('.submit');
-
-const outputPosts = (data) => {
-    console.log(data);
-}
-
-
+// graps the inputed information from the user to create a new post
 const addPost = async (event) => {
     const title = document.querySelector('input[name="title"]').value;
     const message = document.querySelector('input[name="message"]').value;

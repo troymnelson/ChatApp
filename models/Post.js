@@ -4,7 +4,7 @@ const sequelize = require('../config/db-connection');
 
 class Post extends Model { }
 
-
+// creates the model for our posts
 Post.init(
     {
 
