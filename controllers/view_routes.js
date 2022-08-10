@@ -37,7 +37,6 @@ router.get('/dashboard', async (req, res) => {
         console.log(req.session);
         let post = await Post.findByPk(req.session.post_id);
         post = {
-            id: post.id,
             title: post.title,
             message: post.message,
         }
