@@ -35,13 +35,26 @@ router.get('/login', (req, res) => {
 router.get('/dashboard', async (req, res) => {
 
         console.log(req.session);
-        let post = await Post.findByPk(req.session.post_id);
-        post = {
-            id: post.id,
-            title: post.title,
-            message: post.message,
-        }
-        res.render('dashboard', { post: post, title: 'Dashboard', isHome: false, friday: result });
+        let user = await User.findByPk(req.session.user_id, {include: Post});
+        let posts = await Post.findAll();
+        // user = {
+        //     username: user.users_name,
+        //     posts: user.posts.map(post => {
+        //         return {
+        //             id: post.id,
+        //             title: post.title,
+        //             message: post.message,
+        //         }
+        //     })
+        // }
+        posts = posts.map(post => {
+            return {
+                id: post.id,
+                title: post.title,
+                message: post.message,
+            }
+        })
+        res.render('dashboard', { posts, title: 'Dashboard', isHome: false, friday: result });
 
     
 
