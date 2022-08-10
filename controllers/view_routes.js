@@ -2,7 +2,7 @@ var formatDistanceToNow = require('date-fns/formatDistanceToNow')
 const result = formatDistanceToNow(
     new Date(2022, 7, 13),
     {addSuffix: true})
-const User = require('../models/user');
+const User = require('../models/User');
 const db = require('../config/db-connection');
 const router = require('express').Router(); // REQUIRE DA ROUTER
 const Post = require('../models/Post');
