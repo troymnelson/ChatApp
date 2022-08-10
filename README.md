@@ -16,7 +16,7 @@ The technologies used are as listed: Three.js, Date-fns, Express, Handlebars, bc
 
 # Screenshot of the ChatApp
 
-![Screenshot](/ChatApp/Image/Screenshot%202022-08-10%20085707.png)
+![Screenshot](https://github.com/troymnelson/ChatApp/blob/main/Image/Screenshot%202022-08-10%20085707.png)
 
 
 # Link to ChatApp
